@@ -1,0 +1,186 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system definition.
+ *
+ * The @theme inline block maps CSS custom properties to Tailwind utility
+ * classes (e.g. --color-primary -> bg-primary, text-primary).
+ *
+ * The :root and .dark blocks define the actual color values using oklch.
+ * All colors MUST use oklch format.
+ *
+ * To add a new semantic color:
+ * 1. Add the variable to :root (light value) and .dark (dark value)
+ * 2. Register it in @theme inline as --color-<name>: var(--<name>)
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.625rem;
+  --kx-orange: #f26a21;
+  --kx-header: #0d2247;
+  --kx-hero: linear-gradient(135deg, #0b1e3f, #12306a);
+  --kx-glow: #e8743a;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.129 0.042 264.695);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.129 0.042 264.695);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.129 0.042 264.695);
+  --primary: oklch(0.208 0.042 265.755);
+  --primary-foreground: oklch(0.984 0.003 247.858);
+  --secondary: oklch(0.968 0.007 247.896);
+  --secondary-foreground: oklch(0.208 0.042 265.755);
+  --muted: oklch(0.968 0.007 247.896);
+  --muted-foreground: oklch(0.554 0.046 257.417);
+  --accent: oklch(0.968 0.007 247.896);
+  --accent-foreground: oklch(0.208 0.042 265.755);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: oklch(0.929 0.013 255.508);
+  --input: oklch(0.929 0.013 255.508);
+  --ring: oklch(0.704 0.04 256.788);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.984 0.003 247.858);
+  --sidebar-foreground: oklch(0.129 0.042 264.695);
+  --sidebar-primary: oklch(0.208 0.042 265.755);
+  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-accent: oklch(0.968 0.007 247.896);
+  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
+  --sidebar-border: oklch(0.929 0.013 255.508);
+  --sidebar-ring: oklch(0.704 0.04 256.788);
+}
+
+.dark {
+  --background: oklch(0.129 0.042 264.695);
+  --foreground: oklch(0.984 0.003 247.858);
+  --card: oklch(0.208 0.042 265.755);
+  --card-foreground: oklch(0.984 0.003 247.858);
+  --popover: oklch(0.208 0.042 265.755);
+  --popover-foreground: oklch(0.984 0.003 247.858);
+  --primary: oklch(0.929 0.013 255.508);
+  --primary-foreground: oklch(0.208 0.042 265.755);
+  --secondary: oklch(0.279 0.041 260.031);
+  --secondary-foreground: oklch(0.984 0.003 247.858);
+  --muted: oklch(0.279 0.041 260.031);
+  --muted-foreground: oklch(0.704 0.04 256.788);
+  --accent: oklch(0.279 0.041 260.031);
+  --accent-foreground: oklch(0.984 0.003 247.858);
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.551 0.027 264.364);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.208 0.042 265.755);
+  --sidebar-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-accent: oklch(0.279 0.041 260.031);
+  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.551 0.027 264.364);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+}
+
+:root{--kx-bg:#eef3f8;--kx-card:#fff;--kx-text:#0b1e3f;--kx-muted:#5b6b86;--kx-line:#dbe4ef;color-scheme:light}
+[data-t="dark"]{--kx-bg:#050b17;--kx-card:#0c1a33;--kx-text:#fff;--kx-muted:#9fb0cc;--kx-line:#1b2d4f;color-scheme:dark}
+.kx{min-height:100vh;font:15px 'Plus Jakarta Sans',system-ui,sans-serif;background:var(--kx-bg);color:var(--kx-text);background-image:radial-gradient(var(--kx-line) 1px,transparent 1px);background-size:24px 24px}
+.kx *{box-sizing:border-box}
+.kx header{background:var(--kx-header);color:#fff;padding:12px 20px;position:sticky;top:0;z-index:5}
+.kx .hi{max-width:1120px;margin:auto;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.kx .hi img{height:30px;background:#fff;border-radius:8px;padding:3px 8px;cursor:pointer}.kx .sp{flex:1}
+.kx .chip{background:#ffffff1f;border-radius:99px;padding:4px 10px;font-size:12px}
+.kx header select,.kx header button{background:transparent;color:#fff;border:1px solid #ffffff55;border-radius:10px;padding:6px 10px;font:inherit;cursor:pointer;max-width:260px}
+.kx header select option{color:#000}
+.kx nav{position:fixed;left:18px;top:50%;transform:translateY(-50%);background:var(--kx-header);border-radius:99px;padding:10px 8px;display:flex;flex-direction:column;gap:8px;z-index:4}
+.kx nav button{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;color:#fff;cursor:pointer;font-size:18px;background:transparent;border:0}
+.kx nav button.on{background:var(--kx-orange)}
+.kx main{max-width:1120px;margin:20px auto;padding:0 16px 90px}
+.kx .hero{color:#fff;border-radius:28px;padding:30px;display:flex;gap:20px;justify-content:space-between;flex-wrap:wrap;background-image:radial-gradient(ellipse at 100% 120%,var(--kx-glow) 0,transparent 45%),var(--kx-hero)}
+.kx .hero h1{font-size:40px;font-weight:700;margin:0 0 6px}.kx .hero p{margin:0 0 18px;opacity:.85}
+.kx .st{display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap}.kx .st div{border:1px solid #ffffff33;background:#ffffff14;border-radius:16px;padding:14px 18px;min-width:120px}.kx .st b{display:block;font-size:30px;font-weight:700}.kx .st span{font-size:12px}
+.kx .btn{background:var(--kx-orange);color:#fff;border:0;border-radius:10px;padding:10px 16px;font:600 14px 'Plus Jakarta Sans',system-ui,sans-serif;cursor:pointer;margin:0 6px 6px 0}
+.kx .btn.g{background:transparent;border:1px solid currentColor;color:inherit}
+.kx .card{background:var(--kx-card);border:1px solid var(--kx-line);border-radius:20px;padding:20px;margin-top:16px}
+.kx h2{font-size:22px;font-weight:700;margin:24px 0 8px}.kx h3{font-size:17px;font-weight:700;margin:0 0 8px}.kx h4{margin:22px 0 6px;color:var(--kx-orange);font-weight:700}
+.kx .m,.kx small{color:var(--kx-muted)}.kx small{font-size:12px}
+.kx .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.kx .sh{display:flex;align-items:center;gap:8px;padding:16px;border:1px solid var(--kx-line);background:var(--kx-card);border-radius:16px;font-weight:600;cursor:pointer;color:var(--kx-text);text-align:left;font-family:inherit;font-size:15px}
+.kx .q{padding:12px 0;border-bottom:1px solid var(--kx-line)}.kx .q>b{display:block;margin-bottom:8px;font-weight:600}
+.kx .sc,.kx .op{display:flex;gap:6px;flex-wrap:wrap}
+.kx .sc button,.kx .op button{border:1px solid var(--kx-line);background:var(--kx-card);color:var(--kx-text);border-radius:10px;min-width:38px;padding:7px 10px;font:inherit;cursor:pointer}
+.kx .sc button.on,.kx .op button.on{background:var(--kx-orange);border-color:var(--kx-orange);color:#fff}
+.kx textarea,.kx input,.kx select.f{width:100%;background:var(--kx-bg);color:var(--kx-text);border:1px solid var(--kx-line);border-radius:10px;padding:10px;font:inherit}
+.kx textarea{min-height:70px}
+.kx table{width:100%;border-collapse:collapse}.kx td,.kx th{text-align:left;padding:9px;border-bottom:1px solid var(--kx-line)}
+.kx .bd{display:inline-block;border-radius:99px;padding:2px 10px;font-size:12px;background:color-mix(in oklab,var(--kx-orange) 20%,transparent);color:var(--kx-orange);font-weight:700;margin:0 4px 4px 0}
+.kx .note{background:color-mix(in oklab,var(--kx-orange) 8%,transparent);border-left:4px solid var(--kx-orange);padding:10px 14px;border-radius:8px;margin:10px 0;font-size:14px}
+.kx .lk{color:var(--kx-orange);cursor:pointer;background:none;border:0;font:inherit;font-weight:600}
+.kx .big{font-size:32px;font-weight:700}
+.kx .tw{overflow-x:auto}
+@media(max-width:700px){.kx nav{top:auto;bottom:10px;left:50%;transform:translateX(-50%);flex-direction:row}.kx .hero h1{font-size:30px}}
