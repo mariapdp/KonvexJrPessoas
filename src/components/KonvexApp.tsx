@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import logo from "@/assets/konvex-logo.png.asset.json";
+import logo from "@/assets/konvex-logo.png";
 import { FORMS, ITEMS, type FormKey, type Item } from "@/lib/forms";
 import {
   ROLE,
@@ -695,7 +695,7 @@ export function KonvexApp() {
     <div className="kx" data-t={D.th}>
       <header>
         <div className="hi">
-          <img src={logo.url} alt="Konvex Jr" onClick={() => go("home")} />
+          <img src={logo} alt="Konvex Jr" onClick={() => go("home")} />
           <span className="sp" />
           <span className="chip">
             Hoje · {new Date().toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit" })}
